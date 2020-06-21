@@ -31,6 +31,13 @@
 
 </head>
 
+<!-- =======================================================
+  * Template Name: iPortfolio - v1.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
@@ -42,7 +49,7 @@
 
       <div class="profile">
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Nilapu Prasanth Rao</a></h1>
+        <h1 class="text-light"><a href="#hero">Nilapu Prasanth Rao</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -51,7 +58,7 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>Technical Proficiency</span></a></li>
           <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Professional Proficiency</span></a></li>
 
@@ -66,61 +73,75 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Nilapu Prasanth Rao</h1>
-      <p>This is <span class="typed" data-typed-items="taken, not my design, for project, a portfolio"></span></p>
+      <p>Welcome to <span class="typed" data-typed-items="project!, my portfolio!, IOT!, my world :)"></span></p>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= Technical Proficiency Section ======= -->
     <section id="about" class="about">
       <div class="container">
 
         <div class="section-title">
-          <h2>Technical Proficiency</h2> 
+          <h2>Technical Proficiency</h2>
           <!--I need to reference the board more think this is profesional-->
           <!--mention git stuff-->
           <!--Milesstones-->
+          <h3>First Sprint</h3>
+          <p>
+            We started our first sprint and planned out what projects to do. After being assigned to a task
+            I spent the rest of the class time trying to understand and as I call it “Unravelling my brain”. Although I
+            don’t have a solid solution, I am sure I can easily find out so I am mostly confident. </p>
+          <img src="assets/img/DayFour.jpg" alt="Moodle Pic" width="1050">
+          <br></br>
+          <br></br>
+
           <h3>Exploring Documentation & Learning Docker</h3>
           <p>GitLab is still not working we were able to view documentation, but not login. Think I have a slight
             understanding toward what technical tasks need to be done. I will be looking at the containers for the
             servers, which is why I was looking at the documentation for Docker. I am slowly trying to understand what
             it is that I need to do but I’m still not fully sure. In my own time I need to learn Docker but also Django
-            as I was advised to. [maybe screenshot of joshes documentation]
+            as I was advised to. Bex (also in the IOT team) made me realise that I needed to use a server. So I will be
+            creating a server.
             <br></br>
-            I have been given some instructions on what it is I have to do. I created an ubuntu virtual machine and was
-            given a good website known as tutorialpoint.com to learn docker from scratch. I had learnt Docker in the past
-            but have forgot most of it unfortunately [show docker in vm]
-          </p>
+            I was given some instructions on what it is I have to do. I created an ubuntu virtual machine and was
+            given a good website known as tutorialpoint.com to learn docker from scratch. I had learnt Docker in 
+            the past but have forgot most of it unfortunately. My first attempt was a fail, I tried to use Ubuntu 
+            Server (see image bellow) assuming that would be enough for a server and not realising that trying to create servers on a 
+            virtualisation is different and I don't need Ubuntu Server and might be better off using a normal desktop
+            Ubuntu. I have now got myself to a point of understanding the basics for Docker. Now to finally make an 
+            impact towards my ticket. The next step is to start creating a web app in order to move forward towards 
+            my ticket. </p>
+            <br></br>
+            <img src="assets/img/first-dockerEXP.jpg" alt="docker Pic" width="1050">
+          
         </div>
-
-        <h3>First Sprint</h3>
-        <p>
-          We started our first sprint and planned out what projects to do. After being assigned to a task
-          I spent the rest of the class time trying to understand and as I call it “Unravelling my brain”. Although I
-          don’t have a solid solution, I am sure I can easily find out so I am mostly confident. </p>
-        <img src="assets/img/DayFour.jpg" alt="Moodle Pic" width="1050">
-        <br></br>
-        <br></br>
-
-        <h3>Docker Cont.</h3>
-        <p>
-          I learnt the basics for docker up to the point of being able to make a web app. [find early docker
-          screenshots] Bex (also in the IOT team) made me realise that I needed to use a server. So I am thinking about
-          creating a server.</p>
-
+         
         <h3>Alternative Method</h3>
         <p>
           Henry (former IOT student) showed me a web app he had pulled down from someones github. He had given me
-          instructions on how to install this and use it. Not realising at the time, I fully followed his instruction
-          including instaling a type of docker [find the name]. I already had docker on my vm so it showed errors as it
+          instructions on how to install and use it. Not realising at the time, I fully followed his instruction
+          including installing a type of docker called docker.io. I already had docker on my vm so it showed errors as it
           was trying to run two types of docker at once. I thought it would be a good idea to just delete docker and
           reinstall, doing this broke my ingest webapp. So I learnt the hard way to be more careful with what I deleted
-          on the vm. I am going to start again in a fresh new server. [I should try finding old docker]</p>
+          on the vm. I am going to start again in a fresh new server. Martin introduced me to aptitude and helped me 
+          delete the extra docker packages</p>
 
-        <h3>Ingest Local</h3>
+        <h3>Local Ingest for Orokonui</h3>
         <p>
+          I learnt the basics for docker up to the point of being able to make a web app. So then went on to create an Ingest web app locally. 
+          This took me a long time to complete and the difficulty was at an intermedite level. I watch many videos online and instructions on 
+          websites. It took me a while to learn and understand what I needed and what was not. I applied the knowledge I learnt from online and 
+          Martins' advice, I cut back on all the things I didn't need, for example I was creating an empty database instead of accessing an 
+          existing one or repetative lines that were not needed in the Dockerfile (I was installing mysql and pdo twice). Eventually I deployed 
+          a local ingest and though I had completed my ticket. After talking with Henry, he made me realise that it was not external and I could
+          only use port 80 as that was the only open port. Not to say no impact was made as the ingest was Dockerfied and can be used to implement 
+          onto an external server.
         </p>
+          <img src="assets/img/ingest.PNG" alt="ingest Pic" width="1050">
+          <br></br>
+
 
         <h3>Reverse Proxy</h3>
         <p>
@@ -146,50 +167,7 @@
         <p>
         </p>
 
-        <!--<div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore
-              magna aliqua.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +123 456 7890</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 30</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> email@example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et
-              ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-              Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
-            </p>
-          </div>
-      </div>
-
-      </div>
-    </section> -->
-        <!-- End About Section -->
-
-
-        <!-- ======= Resume Section ======= -->
+        <!-- ======= Prefesional Practice Section ======= -->
         <section id="resume" class="resume">
           <div class="container">
 
@@ -197,14 +175,21 @@
               <h2>Professional proficiency</h2>
               <h3>Start</h3>
               <p>We just had a meeting covering a basic introduction to the other members and learnt about what the
-                Internet of Things is. Martin (our lecturer/supervisor) explained the basic theory and talked about current
-                client projects such as Orokonui. We learnt what IOT is and how we use TTN to connect to 'things' (our devices). 
-                He showed us what IOT is made up of, by drawing a diagram and showing us the structure. [ask henry for photo of whiteboard]
+                Internet of Things is. Martin (our lecturer/supervisor) explained the basic theory and talked about
+                current
+                client projects such as Orokonui. We learnt what IOT is and how we use TTN to connect to 'things' (our
+                devices).
+                He showed us what IOT is made up of, by drawing a diagram and showing us the structure. [ask henry for
+                photo of whiteboard]
                 <br></br>
-                After the class session I did some more googling and learnt more LoRaWAN and what IOT is in general. After seeing examples 
-                of IOT in our daily devices like a FitBit, I realised that if there is internet connectivity with data communication on 
-                a device, its IOT. From a poster on the wall in our IOT room (see bellow), I got a brief idea about the steps invovled. 
-                The poster made me realise what my role is and where exactly it fits in with IOT. [Picture of Joshes diagram (circled webapps)]
+                After the class session I did some more googling and learnt more LoRaWAN and what IOT is in general.
+                After seeing examples
+                of IOT in our daily devices like a FitBit, I realised that if there is internet connectivity with data
+                communication on
+                a device, its IOT. From a poster on the wall in our IOT room (see bellow), I got a brief idea about the
+                steps invovled.
+                The poster made me realise what my role is and where exactly it fits in with IOT. [Picture of Joshes
+                diagram (circled webapps)]
               </p>
             </div>
             <h3>Webex Meetings</h3>
@@ -214,34 +199,44 @@
 
             <h3>Team Communication and Scrum meetings</h3>
             <p>It has been hard trying to get help while being stuck at home, I was asking Martin for help but also
-              trying not to bombard him with questions as he is a busy man and I'm not the only one who needs his help. 
-              In our meeting today, Martin advised us to comunicate with each other (as in the team) more. Our teams 
-              chat is not as active as it should be. We all agreed with Martin and created a seperate IOT team group 
-              [screen shot of the chat]. Me and Bex decided to work together via discord video chat. One of us would 
-              screen share and the other would help. [get on call with bex and ask for screen shot] I have said that 
-              I would be scrum master for a few weeks now but did not know the role and the importance of the role. 
-              I knew I had to lead the meeting but did not know how and felt very uncomfortable. Martin told me to make 
+              trying not to bombard him with questions as he is a busy man and I'm not the only one who needs his help.
+              In our meeting today, Martin advised us to comunicate with each other (as in the team) more. Our teams
+              chat is not as active as it should be. We all agreed with Martin and created a seperate IOT team group
+              [screen shot of the chat]. Me and Bex decided to work together via discord video chat. One of us would
+              screen share and the other would help. [get on call with bex and ask for screen shot] I have said that
+              I would be scrum master for a few weeks now but did not know the role and the importance of the role.
+              I knew I had to lead the meeting but did not know how and felt very uncomfortable. Martin told me to make
               sure I do some reasearch before I lead the
               next scrum.</p>
-
-            <h3>Discord help with Bex(maybe better title)</h3>
-            <p></p>
+            <br></br>
+            
+            <h3>Working on tasks through video call</h3>
+            <p>As I mentioned just before, me and Bex worked on Discord to get tasks and would arrange three days within
+              the week to work on tasks.
+            </p>
+            <img src="assets/img/Discordpic.jpg" alt="prune Pic" width="1050">
+            <br></br>
+            I learnt the basics for docker up to the point of being able to make a web app. </p>
+            <br></br>
 
             <h3>Scrum Master</h3>
             <p>In order to understand the role of scrum master, I went back and did some revision on Agile and scrums in
               general first. I then went on understand the roles in agile and what each role has to do. I continued to
               learnt about the dos and don'ts of a Scrum Master and watch examples of a Scrum Master in meetings. [show
               roles diagram (add: after seeing this diagram it clicked), what I read and videos I watched (maybe embedd
-              the video)]. I aksed Bee (project lead) for some advice on leading, she gave me a lot of help especially 
-              about being a Scrum Master. [ask bee if ok to snip messages she sent] The time has come for our next meeting, 
-              I am super nervous. I had prepared notes about what to say and do. I kept it kept the meeting agile and 
-              focused on three things. 1. What did you do yesterday 2. What are you going to 3. Are there any obstacles 
-              and ask if they needed help, I would finish the scrum by passing the meeting on to Martin. [Maybe turn this 
-              into a list] This was actually harder than I thought and I actually missed one member of our IOT group, 
-              it is not easy for me to lead and take on others responsibilities. However, being a Scrum Master made me 
-              pay more attention for what my team members are working on.[take photo of my notes] My role as a Scrum Master 
-              was not limited to just the meetings, I knew that I needed to put the team before me so I messaged all of 
-              my team mates and asked them if everything is okay and how their project is going and offer help. 
+              the video)]. I aksed Bee (project lead) for some advice on leading, she gave me a lot of help especially
+              about being a Scrum Master. [ask bee if ok to snip messages she sent] The time has come for our next
+              meeting,
+              I am super nervous. I had prepared notes about what to say and do. I kept it kept the meeting agile and
+              focused on three things. 1. What did you do yesterday 2. What are you going to 3. Are there any obstacles
+              and ask if they needed help, I would finish the scrum by passing the meeting on to Martin. [Maybe turn
+              this
+              into a list] This was actually harder than I thought and I actually missed one member of our IOT group,
+              it is not easy for me to lead and take on others responsibilities. However, being a Scrum Master made me
+              pay more attention for what my team members are working on.[take photo of my notes] My role as a Scrum
+              Master
+              was not limited to just the meetings, I knew that I needed to put the team before me so I messaged all of
+              my team mates and asked them if everything is okay and how their project is going and offer help.
               [not sure if taking snip is ok here]</p>
 
             <h3>3 Debriefs</h3>
@@ -253,18 +248,10 @@
 
 
           </div>
-        </section><!-- End Resume Section -->
+        </section><!-- End Prefesional Practice Section -->
 
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="credits">
-      Designed by Prasanth Rao Nilapu</a>
-    </div>
-  </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
