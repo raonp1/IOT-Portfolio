@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Prasanth Portfolio</title>
-  <meta content="" name="descriptison">
+  <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -51,8 +51,8 @@
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="#hero">Nilapu Prasanth Rao</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100002079922802" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/prasanth-rao-nilapu-34baa0140/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
@@ -131,13 +131,13 @@
         <h3>Local Ingest for Orokonui</h3>
         <p>
           I learnt the basics for docker up to the point of being able to make a web app. So then went on to create an Ingest web app locally. 
-          This took me a long time to complete and the difficulty was at an intermedite level. I watch many videos online and instructions on 
-          websites. It took me a while to learn and understand what I needed and what was not. I applied the knowledge I learnt from online and 
-          Martins' advice, I cut back on all the things I didn't need, for example I was creating an empty database instead of accessing an 
-          existing one or repetative lines that were not needed in the Dockerfile (I was installing mysql and pdo twice). Eventually I deployed 
-          a local ingest and though I had completed my ticket. After talking with Henry, he made me realise that it was not external and I could
-          only use port 80 as that was the only open port. Not to say no impact was made as the ingest was Dockerfied and can be used to implement 
-          onto an external server.
+          This took me a long time to complete and the difficulty realistically was at an intermedite level but hard for me as it took me a while
+          to understand everything properly at the time. I watch many videos online and instructions on websites. It took me a while to learn and 
+          understand what was and what wasn't needed. I applied the knowledge I learnt from online and Martins' advice, I cut back on all the 
+          things I didn't need, for example I was creating an empty database instead of accessing an existing one or repetative lines that were 
+          not needed in the Dockerfile (I was installing mysql and pdo twice). Eventually I deployed a local ingest and though I had completed 
+          my ticket. After talking with Henry, he made me realise that it was not external and I could only use port 80 as that was the only 
+          open port. Not to say no impact was made as the ingest was Dockerfied and can be used to implement onto an external server.
         </p>
           <img src="assets/img/ingest.PNG" alt="ingest Pic" width="1050">
           <br></br>
@@ -147,135 +147,277 @@
         <p>
           Cameron (Project member) talked to Fisal (Senior lecturer) and asked him for some advice on the best way to have external web apps. Fisal 
           told us about using a reverse proxy, that way we could have all our internal servers comnicate with a single reverse proxy which will 
-          filter all the ports to use 80 then send out to TTN.
+          filter all the ports to use 80 then send out to TTN. This task was more complex than just deploying a web app and had many issues with web 
+          service and ports overlapping modifying the default configuration file and for me personally trying to deploy the Orokonui web app was a bit 
+          of a challenge as it involved things I had not done such as using a .env. Cam explained to me that it requires two containers, one for the 
+          webapp and one for django. If the internal files had issue the entire reverse proxy would stop working and show an upstream error. Eventually
+          we modified the docker file, default.conf and the correct hosts files.
           <br></br>
-          <img src="assets/img/DiagramV2.PNG" alt="ingest Pic" width="1050">
+          <img src="assets/img/DiagramV2.PNG" alt="v2 Pic" width="1050">
           <br></br>
           
-          
-          <img src="assets/img/domains.PNG" alt="ingest Pic" width="1050">
+          <img src="assets/img/domains.PNG" alt="domains Pic" width="1050">
           <br></br>
-          sssssss
+          Me and Cam worked together to complete the reverse proxy. The impact was very fast as it became much easier to deploy servers to the rever proxy
+          However, the picture above shows the dev (staging) server, we were unavailable to deploy to the production server James (Lead member of Operations
+          & Security) told me very limited information on this issue as he was not allowed to say. All I was told was that they cannot create external ips.
+          </p>
+          <br></br>
+          
+          <h4>Documentation for the Reverse Proxy</h4>
+          <p>
+          This took much longer than I first anticipated. This made me really test my knowledge, I ended up changing a lot of things that I was doing wrong 
+          originally such as hosts inside the server instead of the physical machine. My aim was to make the instructions super easy to follow. Making a 
+          document 'easy' was actually harder as I had to apply clear instructions, I aimed for one sentence instructions to keep it simple. Although this 
+          task wasn't so complex, it made me think and change thing and was time consuming. Bex was given the task of testing and was able to complete the 
+          task without need of assistance.
+          <br></br>
+          <img src="assets/img/revDoc1.PNG" alt="revDoc1 Pic" width="1050">
+          <br></br>
+          <img src="assets/img/revDoc2.PNG" alt="revDoc2 Pic" width="1010">
+        </p>
+        
+        <br></br>
+        <hr>
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/c02.PNG" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            
+          <br></br>
+          <h3>Testing C02 Gauge</h3>
+          <p>
+            I took on the task of testing the c02 gauge that Callam (IOT member) has been working on. Most of his documentation does not help the testing 
+            side of things and was confusing. Callam directed me to where the cuurent files are and eventually it started to work fine.
+          </p>
+          </div>
+          </div>
+          
+        <h3>Dockerfying and deploying C02 Gauge on Dev server</h3>
+        <p>
+          The picture bellow shows the ticket in the done section as it is fully complete. Deploying the C02 gauge was simple now that I have done similar 
+          tasks. Locally deployment had no problems other than a typo. 
+          <img src="assets/img/done.PNG" alt="done Pic" width="1050">
         </p>
         <br></br>
         <p>
+          Even though it wasn't a hard challenge, deploying the C02 gauge to the Dev server has help solidfy my basic understandings and using of the
+          reverse proxy. I made multiple silly mistakes which such as typos but it took me till class to realise that I have not been updating the 
+          connect.ict.php file inside my container but the one outside the container. The red blured lines showed the outdated password.
         </p>
-        <h3>Testing C02 Gauge</h3>
+        <img src="assets/img/bash.PNG" alt="bash Pic" width="1050">
+        <br></br>
+        <br></br>
+        <h4>Deployment for the C02 Gauge</h4>
         <p>
+          The documentaion for C02 Gauge was simple and short. There two parts, locally deploying and deploying on dev. There is usually a supress error
+          that shows up on the reverse proxy when you docker-compose run, that is because there is no index.html. I created a basic index with two links
+          redirecting to either /Carbon Gauge or /Gauge data, so now there is no need to type the exact url.
         </p>
-
-        <h3>Documentation for the C02 Gauge</h3>
+        <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+            <h4>Local C02 Gauge</h4>
+            <img src="assets/img/co2snap.PNG" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+              
+            
+            <h4>Dev C02 Gauge</h4>
+            <img src="assets/img/snap2.PNG" class="img-fluid" alt="">
+            </div>
+            </div>
+        
+        <h4>C02 Gauge Documentation</h4>
         <p>
-        </p>
+            The documentaion for C02 Gauge was simple and short. There two parts, locally deploying and deploying on dev.
+            <br></br>
+            <img src="assets/img/codoc.PNG" alt="co2d Pic" width="1050">
+            <hr>
+            <img src="assets/img/co2doc.PNG" alt="co2d2 Pic" width="1050">
 
-        <h3>Dockerfying the C02 Gauge</h3>
-        <p>
         </p>
+        <br></br>
 
-        <h3>Deploying noisemap</h3>
-        <p>
-        </p>
-
-        <h3>Documentation for the Reverse Proxy</h3>
-        <p>
-        </p>
-
+        
+        
+        
         <!-- ======= Prefesional Practice Section ======= -->
         <section id="resume" class="resume">
           <div class="container">
-
+            
             <div class="section-title">
-              <h2>Professional proficiency</h2>
+              <h2>Professional proficiency</h2><!--Talked to josh-->
               <h3>Start</h3>
-              <p>We just had a meeting covering a basic introduction to the other members and learnt about what the
+              <p>We had a meeting covering a basic introduction to the other members and learnt about what the
                 Internet of Things is. Martin (our lecturer/supervisor) explained the basic theory and talked about
-                current
-                client projects such as Orokonui. We learnt what IOT is and how we use TTN to connect to 'things' (our
-                devices).
-                He showed us what IOT is made up of, by drawing a diagram and showing us the structure. [ask henry for
-                photo of whiteboard]
+                current client projects such as Orokonui. We learnt what IOT is and how we use TTN to connect to 
+                'things' (our devices). He showed us what IOT is made up of, by drawing a diagram and showing us 
+                the structure. 
                 <br></br>
                 After the class session I did some more googling and learnt more LoRaWAN and what IOT is in general.
-                After seeing examples
-                of IOT in our daily devices like a FitBit, I realised that if there is internet connectivity with data
-                communication on
-                a device, its IOT. From a poster on the wall in our IOT room (see bellow), I got a brief idea about the
-                steps invovled.
-                The poster made me realise what my role is and where exactly it fits in with IOT. [Picture of Joshes
-                diagram (circled webapps)]
+                After seeing examples of IOT in our daily devices like a FitBit, I realised that if there is internet
+                connectivity with data communication on a device, its IOT. From a poster on the wall in our IOT room 
+                (see bellow), I got a brief idea about the steps invovled. The poster clarified for me where my role 
+                is and where exactly it fits in with IOT.
+                <br></br>
+                <img src="assets/img/poster.jpg" alt="Henrys Pic" width="1050">
+
               </p>
             </div>
             <h3>Webex Meetings</h3>
             <p>Due to the whole covid outbreak, we are now forced to comunicate online and have our classes/meetings
-              online.
-              This made it difficult for us to comunicate and get needed help. ....(come back to this)</p>
-
-            <h3>Team Communication and Scrum meetings</h3>
-            <p>It has been hard trying to get help while being stuck at home, I was asking Martin for help but also
-              trying not to bombard him with questions as he is a busy man and I'm not the only one who needs his help.
-              In our meeting today, Martin advised us to comunicate with each other (as in the team) more. Our teams
-              chat is not as active as it should be. We all agreed with Martin and created a seperate IOT team group
-              [screen shot of the chat]. Me and Bex decided to work together via discord video chat. One of us would
-              screen share and the other would help. [get on call with bex and ask for screen shot] I have said that
-              I would be scrum master for a few weeks now but did not know the role and the importance of the role.
-              I knew I had to lead the meeting but did not know how and felt very uncomfortable. Martin told me to make
-              sure I do some reasearch before I lead the
-              next scrum.</p>
-            <br></br>
-            
-            <h3>Working on tasks through video call</h3>
-            <p>As I mentioned just before, me and Bex worked on Discord to get tasks and would arrange three days within
-              the week to work on tasks.
+              online. This made it difficult for us to comunicate and get needed help. None of us were use to being
+              taught in an online class and had slowed down our work pace abruptly. As time went along we eventually 
+              learnt to adapt to the heavy impact towards our learning environment, getting help was still harder but 
+              got better over time.
             </p>
-            <img src="assets/img/Discordpic.jpg" alt="prune Pic" width="1050">
-            <br></br>
-            I learnt the basics for docker up to the point of being able to make a web app. </p>
-            <br></br>
+              
+              <h3>Team Communication and Scrum meetings</h3>
+              <p>It has been hard trying to get help while being stuck at home, I was asking Martin for help but didn't
+                want to bombard him with questions as he is a busy man and I'm not the only one who needs his help.
+                In our meeting today, Martin advised us to comunicate with each other (as in the team) more. Our teams
+                chat is not as active as it should be. We all agreed with Martin and created a seperate IOT team group.
+                Me and Bex decided to work together via discord video chat. One of us would screen share and the other 
+                would help. I said that I would be scrum master for a few weeks now but did not know the role and the 
+                importance of the role. I knew I had to lead the meeting but did not know how and felt very uncomfortable.
+                Martin told me to make sure I do some reasearch before I lead the next scrum.</p>
+                <img src="assets/img/chat.PNG" alt="chat Pic" width="1050">
+                <br></br>
+                <br></br>
+                <h3>Working on tasks through video call</h3>
+                <p>As I mentioned just before, me and Bex worked on Discord to get tasks and would arrange three days within
+                  the week to work on tasks. A good example on what we actually did was when we were working on the ticket
+                  to where the production server had nearly no space left. At the time we had no idea about whether it was 
+                  safe to use docker system prune and manually deleted line after line.
+                  lines of unused images.
+                </p>
+                <img src="assets/img/done.PNG" alt="prune Pic" width="1050">
+                <br></br>
+                <p>
+                  The image bellow is us showing a recent example of us working together. Just a simple but useful docker 
+                  prune (I have censored out Bex as this is her personal discord).
+                </p>
+                
+                <br></br>
 
-            <h3>Scrum Master</h3>
-            <p>In order to understand the role of scrum master, I went back and did some revision on Agile and scrums in
-              general first. I then went on understand the roles in agile and what each role has to do. I continued to
-              learnt about the dos and don'ts of a Scrum Master and watch examples of a Scrum Master in meetings. [show
-              roles diagram (add: after seeing this diagram it clicked), what I read and videos I watched (maybe embedd
-              the video)]. I aksed Bee (project lead) for some advice on leading, she gave me a lot of help especially
-              about being a Scrum Master. [ask bee if ok to snip messages she sent] The time has come for our next
-              meeting,
-              I am super nervous. I had prepared notes about what to say and do. I kept it kept the meeting agile and
-              focused on three things. 1. What did you do yesterday 2. What are you going to 3. Are there any obstacles
-              and ask if they needed help, I would finish the scrum by passing the meeting on to Martin. [Maybe turn
-              this
-              into a list] This was actually harder than I thought and I actually missed one member of our IOT group,
-              it is not easy for me to lead and take on others responsibilities. However, being a Scrum Master made me
-              pay more attention for what my team members are working on.[take photo of my notes] My role as a Scrum
-              Master
-              was not limited to just the meetings, I knew that I needed to put the team before me so I messaged all of
-              my team mates and asked them if everything is okay and how their project is going and offer help.
-              [not sure if taking snip is ok here]</p>
+                <h3>Scrum Master</h3>
+                <p>In order to understand the role of scrum master, I went back and did some revision on Agile and scrums in
+                  general first. I then went on understand the roles in agile and what each role has to do. I continued to
+                  learnt about the dos and don'ts of a Scrum Master and watched examples of a Scrum Master in meetings, after 
+                  seeing this diagram it clicked). I asked Bee (project lead) for some advice on leading, she gave me a lot 
+                  of help especially about being a Scrum Master.
 
-            <h3>3 Debriefs</h3>
+                  <br></br>
+                  Here are the Do's and DON'Ts:<br></br>
+                  Do:<br></br>
+                  1. Facilitate the product owner to maintain and prioritize the Product Backlog and own the business decisions;<br></br>
+                  2  Help the team members to come up with most realistic estimations they can;<br></br>
+                  3. Help the team members to make right technology decision;<br></br>
+                  4. Inspire the team members to pull and own the tasks and work with them to remove any impediments that are holding them back to achieve those tasks;<br></br>
+                  5. Facilitate self-organization within the team.<br></br>
+                  
+                  <br></br>
+                  Don't:<br></br>
+                  1. Own the product decisions on Product Owner’s behalf;<br></br>
+                  2. Make estimates on team’s behalf;<br></br>
+                  3. Make the technology decisions on team’s behalf;<br></br>
+                  4. Assign the tasks to the team members;<br></br>
+                  5. Try to manage the team.<br></br>
+                  <br></br>
+                  The time has come for our next meeting,
+                  I am very nervous. I had prepared notes about what to say and do. I kept it kept the meeting agile and
+                  focused on three things. 
+                  <br></br>1. What did you do yesterday; <br></br>
+                  2. What are you going to; <br></br>3. 
+                  Are there any obstacles and ask if they needed help.<br></br> I would finish the scrum by passing the meeting on to
+                  Martin. This was actually harder than I thought and I actually missed one member of our IOT group,
+                  it is not easy for me to lead and take on others responsibilities. However, being a Scrum Master made me
+                  pay more attention for what my team members are working on. My role as a Scrum Master was not limited to 
+                  just the meetings, I knew that I needed to put the team before me so I messaged all of
+                  my team mates and asked them if everything is okay and how their project is going and offer help.
+                  (I decided it was best keep those messages private)</p>
+                  
+                  I do have to admit, that I could have done a lot better a Scrum Master. Out of all the five Dos listed, I 
+                  have only tried to inspire/talk in a positive light and show gitlab board. I have gotten better at meetings
+                  as a scrum master, but lack outside scrum master skills. As scrum master, I must improve my agile skills 
+                  and provide more of my time to my team.
+                  
+                  <br></br>
+                  
+                  <h3>The three Debriefs</h3>
+                  <p>Due to covid, we only had one one-on-one in person but have had two through video chatting. In the first 
+                    debrief Martin told me to focus documentation, at the time I thought that it would make no sense to start 
+                    a documentation whern its incomeplete. I was wrong and will do documentation even if its just bit by bit.
+                    Next thing Martin told me about was to start my portfolio.
+                    <br></br>
+                    The is the first one-on-one online. At this stage, I was not doing so well and had gotten lazy due to no 
+                    schedule with covid. I was honest with Martin and told him I was doing bad, he told me to focus on getting 
+                    the task done and documentation as how important documentations are for future students.
+                  </p>
+                    The final one-on-one was, I had started my portfolio. Martin gave out some advice on the portfolio and in 
+                    general what I should be focussing on. It gave me hope saying there is a chance for me to pass.
+                  </p>
+                  
+                  <h3>Dockerise and Deploying Noisemap</h3>
+                  <p>
+                  Me and Bex worked together to help Suresh (IOT member) dockerise the Noisemap. We would communicate
+                  through teams. We tried to do video chats with screen sharing but screenshare would freeze. Later 
+                  on, I helped Suresh by fixing his build and updating some of his files. I was not able to help him 
+                  fully, so I arranged a time for me Cam and suresh to meet up tomorrow. Eventually the Noisemap started 
+                  to work.
+                  </p>
+                  <img src="assets/img/Suresh.jpg" alt="suresh Pic" width="1050">
 
-            <h3>Volunteering - Audacious</h3>
-            <p>Find photo and talk about what I learnt, also mention breifly about how institutional service was not
-              possible covid reasons sell degree?</p>
+                  <br></br>
+                  <br></br>
+                  <h3>Retospective</h3>
+                  <p>
+                    Bee organised retrospectives half way thought the semester where she would ask us three things:
+                    <br>
+                    1) What Successes did you have? <br>
+                    2) What barriers were involved? <br>
+                    3) What could you have done better? <br>
+                    The aim of a retrospective scrum is to reflect back on how the sprint went so we can improve 
+                    for the future sprints. Although for us, we didn't always have completed tasks but we would 
+                    have the chance to understand what it is we are doing.
+                    <img src="assets/img/milestone.png" alt="milestone Pic" width="1050">
+                  </p>
+                  
+                  <h3>Volunteering - Audacious</h3>
+                  <p>
+                    This was a completely new experience for me and Audacious. This was the first time Audacious ran their
+                    workshop classes online and they did a good job, although we have no other option I still prefer in 
+                    person. Main goal for is an investment idea, but its more actually more than that, we get guidance From
+                    real professionals specilised in jobs such as marketing or a lawyer. Audacious manages to keep the 
+                    classes interesting and there is always something new to talk about.
 
-
-
-          </div>
-        </section><!-- End Prefesional Practice Section -->
-
-
-  </main><!-- End #main -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                    <br></br>
+                  <p>
+                    My idea for Audacious didn't go so well, not because my idea is bad but more because I haven't given 
+                    enough of my time and will to come back next semester.
+                  </p>
+                  </p>
+                  <img src="assets/img/audacious.jpg" alt="audacious Pic" width="1050">
+                    
+                    
+                    
+                  </div>
+                </section><!-- End Profesional Practice Section -->
+                
+                
+              </main><!-- End #main -->
+              
+              <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+              
+              <!-- Vendor JS Files -->
+              <script src="assets/vendor/jquery/jquery.min.js"></script>
+              <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+              <script src="assets/vendor/php-email-form/validate.js"></script>
+              <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+              <script src="assets/vendor/counterup/counterup.min.js"></script>
+              <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
